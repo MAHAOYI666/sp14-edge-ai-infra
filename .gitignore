@@ -17,14 +17,14 @@ dist/
 Thumbs.db
 
 # Keep folder structure, but do not upload too many large files by default
-models/onnx/*
-!models/onnx/.gitkeep
+#models/onnx/*
+#!models/onnx/.gitkeep
 
-models/hef/*
-!models/hef/.gitkeep
+#models/hef/*
+#!models/hef/.gitkeep
 
-data/calib_images/*
-!data/calib_images/.gitkeep
+#data/calib_images/*
+#!data/calib_images/.gitkeep
 
 results/logs/*
 !results/logs/.gitkeep
