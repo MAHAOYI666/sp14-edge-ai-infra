@@ -1,6 +1,6 @@
 ﻿# SP14
 
-本仓库用于记录本人毕业设计 SP14 中与 AI infra / deployment 相关的工作，重点不是训练，而是模型从导出到上板运行的过程。
+本仓库用于记录本人毕业设计 SP14 中与 AI infra & deployment 相关的工作，重点是模型从导出到上板运行的过程。
 
 ## 项目范围
 - 任务：On-device Object Detection for Autonomous Driving
@@ -15,7 +15,7 @@
 ## 目录说明
 - ppt/            中期汇报 PPT
 - code/           主要脚本
-- models/         导出的 ONNX / HEF / 类别文件
+- models/         导出的 ONNX / HEF 类别文件
 - data/           演示图像与 calibration 样本
 - results/        截图、benchmark、日志
 - notes/          模型结论、部署总结、问题记录
