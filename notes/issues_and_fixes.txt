@@ -1,0 +1,39 @@
+﻿SP14 常见问题与修复记录
+
+1. 没有框
+可能原因：
+- 选错输出 tensor / vstream
+- decode 逻辑不匹配
+- threshold 过高
+- labels 对不上
+
+2. 同一个物体很多框
+可能原因：
+- 没有做 NMS
+- IoU / conf 阈值设置不合适
+- 重复 decode 了原始输出
+
+3. CPU 正常，NPU 结果不稳定
+可能原因：
+- calibration set 和 runtime preprocess 不一致
+- RGB / BGR 顺序不一致
+- normalization 不一致
+- layout（NHWC / NCHW）不一致
+
+4. 以为模型坏了，其实是路径或版本问题
+可能原因：
+- HEF 路径写错
+- 旧版本模型没有替换干净
+- export 后没有重新编译
+- Pi 上跑的不是最新脚本
+
+5. 编译成功但效果差
+可能原因：
+- INT8 对输入 scale 很敏感
+- calibration 图像质量或分布不对
+- postprocess 没按当前模型输出定义重写
+
+结论
+- 大多数问题不是“模型本身烂”，而是“部署链不一致”
+- 排查顺序应该是：
+  CPU correctness -> NPU compile/run -> INT8 stability -> FPS

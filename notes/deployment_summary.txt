@@ -1,0 +1,25 @@
+﻿SP14 部署总结（中期汇报）
+
+目标平台
+- Raspberry Pi 5：CPU baseline
+- Raspberry Pi 5 + Hailo：主要部署目标
+
+整体流程
+1. 在 Windows / WSL 侧完成 ONNX 导出
+2. 准备 calibration images
+3. 使用 DFC 做 parse -> optimize(INT8) -> compile(HEF)
+4. 把 HEF 和推理脚本放到树莓派
+5. 在 Pi 上做 image / camera inference
+6. 检查框是否稳定、类别是否正确、FPS 是否可用
+
+经验结论
+- CPU path 不能省，因为它是 correctness baseline
+- NPU path 不能少，因为没有加速就很难满足 real-time 展示
+- “编译成功” 不等于 “结果正确”
+- 真正常见的问题在 preprocess、scale、decode、NMS 和 calibration 一致性
+
+模型部署难度（从易到难）
+1. YOLOv5s：主要问题是 decode / NMS
+2. YOLOv8：问题常出在 INT8 calibration 和输入处理一致性
+3. PicoDet：导出链和 head/postprocess 更容易出兼容问题
+4. DETR-family：最难，transformer 结构对编译和量化都更不友好

@@ -1,0 +1,31 @@
+﻿SP14 模型总结（基于中期汇报）
+
+1. YOLOv8m2
+- 当前精度最高，mAP@0.5 = 0.633，mAP@0.5:0.95 = 0.374
+- 但模型较大，ONNX 约 98.68 MB，边缘部署压力大
+
+2. YOLOv8s4-2
+- 综合平衡较好，mAP@0.5 = 0.596，mAP@0.5:0.95 = 0.341
+- 更适合作为展示主力模型
+
+3. YOLOv8n3
+- 轻量级 YOLO baseline
+- mAP@0.5 = 0.503，适合展示轻量部署路线
+
+4. PicoDet-S
+- 模型很小，ONNX 约 4.65 MB
+- 精度上限明显低于 YOLO
+- 更适合展示“轻量但精度有代价”
+
+5. YOLOv5s / YOLOv5s_C3TR
+- 准确率差异不大
+- 但 YOLOv5 的部署链更稳定，适合作为 Hailo NPU 展示基线
+
+6. RT-DETR / DETR-family
+- 研究意义强
+- 但部署复杂，尤其在 transformer block、INT8 和编译稳定性上更难
+- 更适合放在“尝试过但部署难度高”的部分
+
+结论
+- 如果只保留一个部署主线：优先 YOLOv5s 或 YOLOv8s
+- 如果要展示“精度”和“部署难度”的权衡：YOLOv8 / PicoDet / DETR 的对比很有价值

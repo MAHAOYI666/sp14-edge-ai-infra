@@ -1,0 +1,8 @@
+﻿numpy
+opencv-python
+onnx
+onnxruntime
+pillow
+pyyaml
+tqdm
+matplotlib

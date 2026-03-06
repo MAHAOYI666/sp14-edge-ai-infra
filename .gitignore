@@ -1,0 +1,34 @@
+﻿__pycache__/
+*.pyc
+*.pyo
+*.log
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# Python build
+build/
+dist/
+*.egg-info/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Keep folder structure, but do not upload too many large files by default
+models/onnx/*
+!models/onnx/.gitkeep
+
+models/hef/*
+!models/hef/.gitkeep
+
+data/calib_images/*
+!data/calib_images/.gitkeep
+
+results/logs/*
+!results/logs/.gitkeep
+
+# Optional: if benchmark files become too messy
+# results/benchmark/*
+# !results/benchmark/.gitkeep

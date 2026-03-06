@@ -1,0 +1,14 @@
+train: "images/train"
+val:   "images/val"
+test:  "images/test"
+names:
+  0: car
+  1: bus
+  2: person
+  3: bike
+  4: truck
+  5: motor
+  6: train
+  7: rider
+  8: traffic sign
+  9: traffic light
