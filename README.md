@@ -3,7 +3,7 @@
 本仓库用于记录本人毕业设计 SP14 中与 AI infra & deployment 相关的工作，重点是模型从导出到上板运行的过程。
 
 ## 项目简介
-本项目围绕 **自动驾驶场景下的车载目标检测（On-device Object Detection for Autonomous Driving）** 展开，重点关注目标检测模型在边缘设备上的部署可行性，而不是单纯追求训练精度。项目以 **BDD100K** 作为实验背景，比较了不同目标检测模型在精度、模型体积、部署复杂度和实际运行性能上的差异，并尝试将模型部署到 **Raspberry Pi 5 + Hailo NPU** 平台上，实现从模型导出、量化编译到端侧推理的完整流程。
+本项目围绕 **自动驾驶场景下的车载目标检测（On-device Object Detection for Autonomous Driving）** 展开，重点关注目标检测模型在边缘设备上的部署可行性。项目以 **BDD100K**数据集作为实验背景，比较了不同目标检测模型在精度、模型体积、部署复杂度和实际运行性能上的差异，并尝试将模型部署到 **Raspberry Pi 5 + Hailo NPU** 平台上，实现从模型导出、量化编译到端侧推理的完整流程。
 
 ## 项目范围
 - 任务：On-device Object Detection for Autonomous Driving
